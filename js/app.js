@@ -10,8 +10,7 @@ function play(){
 
         resultado =  precio_play + iva()
        
-        alert(`Play 5: ${precio_play} dolares 
-        Con iva: ${resultado} dolares`)
+        alert(`Play 5: ${precio_play} dolares\nCon iva: ${resultado} dolares`)
         class Play {
             constructor(nombre, precio){
                 this.nombre = nombre 
@@ -52,8 +51,7 @@ function fifa(){
 
         resultado =  precio_fifa + iva()
        
-        alert(`Fifa 23: ${precio_fifa} dolares 
-        Con iva: ${resultado} dolares`)
+        alert(`Fifa 23: ${precio_fifa} dolares\nCon iva: ${resultado} dolares`)
         class Fifa {
             constructor(nombre, precio){
                 this.nombre = nombre 
@@ -93,8 +91,7 @@ function auris(){
 
         resultado =  precio_auris + iva()
        
-        alert(`Auriculares play 5: ${precio_auris} dolares 
-        Con iva: ${resultado} dolares`)
+        alert(`Auriculares play 5: ${precio_auris} dolares\nCon iva: ${resultado} dolares`)
         class Auris {
             constructor(nombre, precio){
                 this.nombre = nombre 
