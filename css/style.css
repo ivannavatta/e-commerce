@@ -1,0 +1,53 @@
+.logotipo{
+    width: 10rem;
+}
+.banner_samsung{
+    height: 27rem;
+    width: 100%;
+}
+.banner_apple{
+    height: 27rem;
+    width: 100%;
+}
+.banner_xiaomi{
+   height: 27rem;
+    width: 100%;
+}
+.papa{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.articulo1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.play5{
+    padding-top: 5rem;
+    height: 20rem;
+    width: 20rem;
+}
+button{
+    width: 10rem;
+}
+.articulo2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.fifa23{
+    padding-top: 5rem;
+    height: 20rem;
+    width: 20rem;
+}
+.articulo3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Auriculares_ps5{
+    padding-top: 5rem;
+    height: 20rem;
+    width: 20rem;
+}
