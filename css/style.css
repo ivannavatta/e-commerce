@@ -32,6 +32,23 @@
     height: 30rem;
     width: 100%;
 }
+.circular{
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.botton_tele{
+    width: auto;
+    height: 100%;
+    margin-left: -50px;
+    
+}
+.botton_tele:hover{
+    border: 3px solid black;
+}
 .papa{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

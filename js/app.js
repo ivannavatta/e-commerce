@@ -17,7 +17,7 @@ function play(){
                 this.precio = precio
             }
             descuento(){
-                this.precio = this.precio * 0.8;
+                this.precio = (this.precio + iva()) * 0.8;
             }
             
         }
@@ -66,7 +66,7 @@ function returnal(){
                 this.precio = precio
             }
             descuento(){
-                this.precio = this.precio * 0.8;
+                this.precio = (this.precio + iva()) * 0.8;
             }
             
         }
@@ -113,7 +113,7 @@ function auris(){
                 this.precio = precio
             }
             descuento(){
-                this.precio = this.precio * 0.8;
+                this.precio = (this.precio + iva()) * 0.8;
             }
             
         }
