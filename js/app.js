@@ -23,11 +23,19 @@ function play(){
         }
         const play = []
         play.push(new Play("Play 5", 500))
+      
 
         for (producto of play){
+            let descuento = "Colocar la palabra 'descuento' para 20% OFF"
+            if(prompt(descuento).toLowerCase() == "descuento"){
             producto.descuento();
             alert(`Total con 20% OFF: ${producto.precio} dolares`)
         }
+        else{
+            alert(`Lo siento no obtuviste el descuento el precio final es:\nTotal: ${resultado} dolares`)
+        }
+    }
+    
         rta = prompt("Escriba 'salir' para finalizar el pedido").toLowerCase()
     }while(rta != "salir")
 
@@ -40,19 +48,19 @@ function button(){
 }
 
 
-function fifa(){
+function returnal(){
     let resultado = 0
-   let precio_fifa = 50
+   let precio_returnal = 50
    
     function iva(){
-        return precio_fifa * 0.6
+        return precio_returnal * 0.6
     }
     do{
 
-        resultado =  precio_fifa + iva()
+        resultado =  precio_returnal + iva()
        
-        alert(`Fifa 23: ${precio_fifa} dolares\nCon iva: ${resultado} dolares`)
-        class Fifa {
+        alert(`Returnal: ${precio_returnal} dolares\nCon iva: ${resultado} dolares`)
+        class Returnal {
             constructor(nombre, precio){
                 this.nombre = nombre 
                 this.precio = precio
@@ -62,13 +70,20 @@ function fifa(){
             }
             
         }
-        const fifa = []
-        fifa.push(new Fifa("FIfa 23", 50))
+        const returnal = []
+        returnal.push(new Returnal("Returnal", 50))
 
-        for (producto of fifa){
+        for (producto of returnal){
+           let descuento = "Colocar la palabra 'descuento' para 20% OFF"
+            if(prompt(descuento).toLowerCase() == "descuento"){
+                
             producto.descuento();
             alert(`Total con 20% OFF: ${producto.precio} dolares`)
         }
+        else{
+            alert(`Lo siento no obtuviste el descuento el precio final es:\nTotal: ${resultado} dolares`)
+        }
+    }
         rta = prompt("Escriba 'salir' para finalizar el pedido").toLowerCase()
     }while(rta != "salir")
 
@@ -77,7 +92,7 @@ function fifa(){
 
 }
 function button2(){
-    fifa();
+    returnal();
 }
 
 function auris(){
@@ -106,9 +121,15 @@ function auris(){
         auris.push(new Auris("Auriculares play 5", 300))
 
         for (producto of auris){
+            let descuento = "Colocar la palabra 'descuento' para 20% OFF"
+            if(prompt(descuento).toLowerCase() == "descuento"){
             producto.descuento();
             alert(`Total con 20% OFF: ${producto.precio} dolares`)
         }
+        else{
+            alert(`Lo siento no obtuviste el descuento el precio final es:\nTotal: ${resultado} dolares`)
+        }
+    }
         rta = prompt("Escriba 'salir' para finalizar el pedido").toLowerCase()
     }while(rta != "salir")
 

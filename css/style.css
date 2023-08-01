@@ -1,53 +1,106 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; }
+    nav{
+        height: 6rem;
+    }
+    li{
+        padding: 1rem;
+        
+    }
+    .pa{
+        text-align: center;
+    }
 .logotipo{
-    width: 10rem;
+    width: 20%;
 }
+
 .banner_samsung{
-    height: 27rem;
+    height: 30rem;
     width: 100%;
 }
 .banner_apple{
-    height: 27rem;
+    height: 30rem;
     width: 100%;
 }
 .banner_xiaomi{
-   height: 27rem;
+   height: 30rem;
+    width: 100%;
+}
+.banner_gaming{
+    height: 30rem;
     width: 100%;
 }
 .papa{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
-.articulo1{
+.articulos{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .play5{
     padding-top: 5rem;
-    height: 20rem;
-    width: 20rem;
+    height: 25rem;
+    width: 22rem;
 }
 button{
     width: 10rem;
+    border-radius: 2rem;
+    
 }
-.articulo2{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.fifa23{
+
+.returnal{
     padding-top: 5rem;
-    height: 20rem;
-    width: 20rem;
+    height: 25rem;
+    width: 22rem;
 }
-.articulo3{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+.uncharted{
+    padding-top: 5rem;
+    height: 25rem;
+    width: 22rem;
 }
 .Auriculares_ps5{
     padding-top: 5rem;
-    height: 20rem;
-    width: 20rem;
+    height: 25rem;
+    width: 22rem;
+} 
+
+.sackboy{
+    padding-top: 5rem;
+    height: 25rem;
+    width: 22rem;
+}
+
+.play4{
+    padding-top: 5rem;
+    height: 25rem;
+    width: 22rem;
+}
+
+.watch_dogs{
+    padding-top: 5rem;
+    height: 25rem;
+    width: 22rem;
+}
+
+.inmortals_fenyx{
+    padding-top: 5rem;
+    height: 25rem;
+    width: 22rem;
+}
+
+.anthem{
+    padding-top: 5rem;
+    height: 25rem;
+    width: 22rem;
+}
+.h1_gaming{
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-top: 2rem;
 }
