@@ -32,22 +32,65 @@
     height: 30rem;
     width: 100%;
 }
-.circular{
-    display: inline-block;
+.targetaPadre{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 3rem;
+    
+   
+}
+figure{
     position: relative;
-    width: 200px;
-    height: 200px;
+    height: 250px;
+    width: 350px;
     overflow: hidden;
-    border-radius: 50%;
+    border-radius: 6px;
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.50);
+    cursor: pointer;
 }
 .botton_tele{
-    width: auto;
+    width: 100%;
     height: 100%;
-    margin-left: -50px;
+    transition: all 500ms ease-out;
     
 }
-.botton_tele:hover{
-    border: 3px solid black;
+.capa{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(63, 78, 82, 0.6);
+    transition: all 500ms ease-out;
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+}
+.targetaPadre figure:hover > .capa{
+    opacity: 1;
+    visibility: visible;
+
+}
+.targetaPadre figure:hover > .capa h3{
+    margin-top: 70px;
+    margin-bottom: 15px;
+
+}
+.targetaPadre figure .capa h3{
+    color: white;
+    font-weight: 400;
+    margin-bottom: 120px;
+    transition: all 500ms ease-out;
+    margin-top: 20px;
+}
+.targetaPadre figure .capa p{
+    color: white;
+    font-size: 15px;
+    line-height: 1.5;
+    width: 100%;
+    max-width: 220px;
+    margin: auto;
 }
 .papa{
     display: grid;
@@ -120,4 +163,43 @@ button{
     font-weight: bold;
     text-transform: uppercase;
     padding-top: 2rem;
+}
+
+
+
+ul {
+    list-style: none;
+}
+
+.submenu {
+    position: relative;
+}
+
+#img-carrito {
+    cursor: pointer;
+}
+
+.submenu #carrito {
+    display: none;
+}
+
+.submenu:hover #carrito {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 1;
+    background-color: white;
+    padding: 20px;
+    min-height: 400px;
+    min-width: 300px;
+}
+
+th{
+    padding: 1.5rem;
+}
+
+#vaciar-carrito{
+    text-align: center;
+    cursor: pointer;
 }
