@@ -198,6 +198,10 @@ ul {
 th{
     padding: 1.5rem;
 }
+td{
+    padding: 1.5rem;
+}
+
 
 #vaciar-carrito{
     text-align: center;
