@@ -16,6 +16,9 @@
     width: 20%;
 }
 
+.carousel{
+    z-index: 0;
+}
 .banner_samsung{
     height: 30rem;
     width: 100%;
@@ -95,11 +98,27 @@ figure{
 .papa{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1100px;
+}
+.center-contain{
+    display: flex;
+    justify-content: center;
 }
 .articulos{
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
+    border-radius: 2px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    margin: 2rem;
+    transition: all .4s ease;
+    padding-bottom: 2rem;
+   
+}
+.articulos:hover{
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3%);
 }
 .play5{
     padding-top: 5rem;
@@ -183,7 +202,7 @@ ul {
     display: none;
 }
 
-.submenu:hover #carrito {
+.submenu:hover  #carrito{
     display: block;
     position: absolute;
     right: 0;
@@ -195,15 +214,170 @@ ul {
     min-width: 300px;
 }
 
+
+
 th{
     padding: 1.5rem;
 }
 td{
     padding: 1.5rem;
+} 
+.cantidad-pro-carrito{
+    
+    padding-left: 3rem;
+}
+.price-pro-carrito{
+    
+    padding-left: 2rem;
+}
+.img-pro-carrito{
+    
+    padding: 10px 0px 0px ;
 }
 
+.center-botton{
+    text-align: center;
+}
+
+.bubbly-button{
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    display: inline-block;
+    font-size: 15px;
+    padding: 1em 2em;
+    margin-top: 100px;
+    margin-bottom: 60px;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #1E8449;
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+    box-shadow: 0 2px 25px rgba(20, 90, 50, 0.5);
+    
+    &:focus {
+      outline: 0;
+    }
+    
+    &:before, &:after{
+      position: absolute;
+      content: '';
+      display: block;
+      width: 140%;
+      height: 100%;
+      left: -20%;
+      z-index: -1000;
+      transition: all ease-in-out 0.5s;
+      background-repeat: no-repeat;
+    }
+    
+    &:before{
+      display: none;
+      top: -75%;
+      background-image:  
+        radial-gradient(circle, #1E8449 20%, transparent 20%),
+      radial-gradient(circle,  transparent 20%, #1E8449 20%, transparent 30%),
+      radial-gradient(circle, #1E8449 20%, transparent 20%), 
+      radial-gradient(circle, #1E8449 20%, transparent 20%),
+      radial-gradient(circle,  transparent 10%, #1E8449 15%, transparent 20%),
+      radial-gradient(circle, #1E8449 20%, transparent 20%),
+      radial-gradient(circle, #1E8449 20%, transparent 20%),
+      radial-gradient(circle, #1E8449 20%, transparent 20%),
+      radial-gradient(circle, #1E8449 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+    background-position: 0% 80%, -5% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 85% 30%;
+    }
+    
+    &:after{
+      display: none;
+      bottom: -75%;
+      background-image:  
+      radial-gradient(circle, #1E8449 20%, transparent 20%), 
+      radial-gradient(circle, #1E8449 20%, transparent 20%),
+      radial-gradient(circle,  transparent 10%, #1E8449 15%, transparent 20%),
+      radial-gradient(circle, #1E8449 20%, transparent 20%),
+      radial-gradient(circle, #1E8449 20%, transparent 20%),
+      radial-gradient(circle, #1E8449 20%, transparent 20%),
+      radial-gradient(circle, #1E8449 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+    }
+   
+    &:active{
+      transform: scale(0.9);
+      background-color: darken(#1E8449, 5%);
+      box-shadow: 0 2px 25px rgba(20, 90, 50, 0.2);
+    }
+    
+    &.animate{
+      &:before{
+        display: block;
+        animation: topBubbles ease-in-out 0.75s forwards;
+      }
+      &:after{
+        display: block;
+        animation: bottomBubbles ease-in-out 0.75s forwards;
+      }
+    }
+  }
+  
+  
+  @keyframes topBubbles {
+    0%{
+      background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+    }
+      50% {
+        background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;}
+   100% {
+      background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
+    }
+  }
+  
+  @keyframes bottomBubbles {
+    0%{
+      background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+    }
+    50% {
+      background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;}
+   100% {
+      background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+    background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
+    }
+  }
 
 #vaciar-carrito{
     text-align: center;
     cursor: pointer;
+   
+}
+
+.count-products {
+    position: absolute;
+    top: 40%;
+    right: 0;
+    margin-right: 20px;
+    background-color: #000;
+    color: #fff;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.cart-total{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 22px;
+}
+
+.cart-total span{
+    font-size: 1.7rem;
+    margin-left: 1rem;
 }
