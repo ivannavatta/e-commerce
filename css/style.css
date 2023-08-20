@@ -6,11 +6,14 @@
         height: 6rem;
     }
     li{
+       
         padding: 1rem;
         
     }
     .pa{
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        
     }
 .logotipo{
     width: 20%;
@@ -18,6 +21,12 @@
 
 .carousel{
     z-index: 0;
+}
+h1{
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-top: 2rem;
 }
 .banner_samsung{
     height: 30rem;
@@ -33,6 +42,10 @@
 }
 .banner_gaming{
     height: 30rem;
+    width: 100%;
+}
+.banner_tv{
+    height: 35rem;
     width: 100%;
 }
 .targetaPadre{
@@ -58,6 +71,16 @@ figure{
     height: 100%;
     transition: all 500ms ease-out;
     
+}
+.botton_play5{
+    width: 100%;
+    height: 100%;
+    transition: all 500ms ease-out;
+}
+.botton_iphone{
+    margin-left: 3rem;
+    height: 100%;
+    transition: all 500ms ease-out;
 }
 .capa{
     position: absolute;
@@ -108,7 +131,7 @@ figure{
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
+    /* overflow: hidden; */
     border-radius: 2px;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
     margin: 2rem;
@@ -120,69 +143,28 @@ figure{
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
     transform: translateY(-3%);
 }
-.play5{
+
+.productos{
     padding-top: 5rem;
     height: 25rem;
     width: 22rem;
 }
+
 button{
+    background-color: #000;
+    color: #fff;
     width: 10rem;
-    border-radius: 2rem;
+    border: transparent;
+    border-radius: 4px;
+    transition: all 0.2 ease;
     
 }
-
-.returnal{
-    padding-top: 5rem;
-    height: 25rem;
-    width: 22rem;
+button:active{
+    transform: scale(0.96);
 }
 
-.uncharted{
-    padding-top: 5rem;
-    height: 25rem;
-    width: 22rem;
-}
-.Auriculares_ps5{
-    padding-top: 5rem;
-    height: 25rem;
-    width: 22rem;
-} 
 
-.sackboy{
-    padding-top: 5rem;
-    height: 25rem;
-    width: 22rem;
-}
 
-.play4{
-    padding-top: 5rem;
-    height: 25rem;
-    width: 22rem;
-}
-
-.watch_dogs{
-    padding-top: 5rem;
-    height: 25rem;
-    width: 22rem;
-}
-
-.inmortals_fenyx{
-    padding-top: 5rem;
-    height: 25rem;
-    width: 22rem;
-}
-
-.anthem{
-    padding-top: 5rem;
-    height: 25rem;
-    width: 22rem;
-}
-.h1_gaming{
-    text-align: center;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding-top: 2rem;
-}
 
 
 
@@ -194,8 +176,9 @@ ul {
     position: relative;
 }
 
-#img-carrito {
+.logo-carrito{
     cursor: pointer;
+    font-size: 2.5rem;
 }
 
 .submenu #carrito {
@@ -224,7 +207,8 @@ td{
 } 
 .cantidad-pro-carrito{
     
-    padding-left: 3rem;
+    
+    padding-left: rem
 }
 .price-pro-carrito{
     
@@ -381,3 +365,15 @@ td{
     font-size: 1.7rem;
     margin-left: 1rem;
 }
+
+.quantity-btn-decrese,
+.quantity-btn-increse{
+   
+    font-size: 1.7rem;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+
+
