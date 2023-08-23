@@ -79,6 +79,14 @@ btnCarrito.addEventListener('click', () => {
  
   isCartVisible = !isCartVisible;
 });
+overlay.addEventListener('click', () => {
+    if (isCartVisible) {
+      carrito.style.display = 'none';
+      overlay.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+    isCartVisible = false;
+  });
 
 //eventos
 listaProductos.addEventListener('click', agregarProducto) 
