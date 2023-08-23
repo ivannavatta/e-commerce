@@ -189,13 +189,28 @@ ul {
     display: none;
     position: absolute;
     right: 0;
-    top: 1;
+    top: 0;
     z-index: 1;
     background-color: #ffffff;
     padding: 20px;
     height: 100vh;
     min-width: 350px;
     
+}
+.titulo-carrito{
+    margin-left: 1rem;
+    font-size: 1.5rem;
+}
+
+#cerrar-carrito{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: transparent;
+    cursor: pointer;
+    margin-right: 2.5rem;
+    position: fixed;
+    font-size: 2.8rem;
 }
 #lista-carrito{
     display: block;
@@ -220,8 +235,33 @@ td{
 } 
 .cantidad-pro-carrito{
     
+    display: flex;
+    align-items: center;
+    border: #6a6a6a 1px solid;
+    border-radius: 3rem;
+    width: 6rem;
+    height: 2rem;
+    overflow: hidden;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    top: 3.2rem;
+}
+.cantidad-pro-carrito button{
+    background: transparent;
+    color: #6a6a6a;
     
-    padding-left: rem
+    
+}
+.quantity-btn-decrese{
+    position: relative;
+    right: .7rem;
+    
+}
+.quantity-btn-increse{
+    position: relative;
+    left: .7rem;
+    
 }
 .price-pro-carrito{
     
@@ -241,7 +281,7 @@ td{
     display: inline-block;
     font-size: 15px;
     padding: 1em 2em;
-    margin-top: 100px;
+    
     margin-bottom: 80px;
     -webkit-appearance: none;
     appearance: none;
@@ -325,6 +365,7 @@ td{
 #vaciar-carrito{
     text-align: center;
     cursor: pointer;
+    padding-top: 2rem;
    
 }
 
@@ -347,7 +388,7 @@ td{
 .cart-total{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-content: center;
     padding-bottom: 22px;
     padding-top: 3rem;
 }
@@ -363,6 +404,7 @@ td{
     font-size: 1.7rem;
     font-weight: bold;
     cursor: pointer;
+    padding-bottom: 5px;
 
 }
 .info-carrito-vacio{

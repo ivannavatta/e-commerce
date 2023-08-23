@@ -38,8 +38,24 @@ const btnCarrito = document.querySelector('#cart-btn')
 
 const overlay = document.querySelector('#overlay');
 
+const cerrarBtn = document.querySelector('.cerrar-btn')
+
+const hr = document.querySelector('.hr-vaciarCarrito')
+
+const inputText = document.querySelector('#inputTexto')
+
+const mostrarinfo = document.querySelector('.mostrarInfo')
+
+const enviarBtn = document.querySelector('#enviarDatos')
 
 
+
+cerrarBtn.addEventListener('click', () =>{
+    carrito.style.display = 'none';
+    overlay.style.display = 'none';
+    document.body.style.overflow = 'auto';
+    
+})
 //evnto para guardar el carrito cuando se recare la web
 document.addEventListener('DOMContentLoaded', ()=>{
     if(JSON.parse(localStorage.getItem('carrito')) == null){
@@ -59,13 +75,15 @@ let isCartVisible = false;
 
 btnCarrito.addEventListener('click', () => {
   if (!isCartVisible) {
-
+    
     carrito.style.display = 'block';
     overlay.style.display = 'block';
     document.body.style.overflow = 'hidden';
     if(articulosCarrito.length){
         overlay.style.width = '69.5%'
     }
+   
+   
     
     
   } else {
@@ -191,6 +209,7 @@ function carritoHTML(){
     if (tbodyCarrito) {
       if (tbodyCarrito.clientHeight < tbodyCarrito.scrollHeight) {
         tbodyCarrito.style.overflowY = "auto";
+        
       } else {
         tbodyCarrito.style.overflowY = "hidden";
       }
@@ -203,12 +222,14 @@ if(!articulosCarrito.length){
     vaciarCarritoBtn.classList.add('hidden')
     btnComprar.classList.add('hidden')
     tablaCarrito.classList.add('hidden')
+    hr.classList.add('hidden')
 }else{
     infoCarritoVacio.classList.add('hidden')
     cartTotal.classList.remove('hidden')
     vaciarCarritoBtn.classList.remove('hidden')
     btnComprar.classList.remove('hidden')
     tablaCarrito.classList.remove('hidden')
+    hr.classList.remove('hidden')
 }
 
 
@@ -227,8 +248,8 @@ if(!articulosCarrito.length){
          
 
           
-          <td class='cantidad-pro-carrito'> <span class='quantity-btn-decrese'>-</span> ${producto.cantidad} <span class='quantity-btn-increse'>+</span></td>
-          
+          <td class='cantidad-pro-carrito'> <button class='quantity-btn-decrese'>-</button> ${producto.cantidad}  <button class='quantity-btn-increse'>+</button></td>
+         
           
       
           
@@ -256,6 +277,15 @@ if(!articulosCarrito.length){
             carritoHTML();
 
             
+        })
+        enviarBtn.addEventListener('click', () =>{
+            const textoIngresado = inputText.value;
+            let total = 0
+            if(textoIngresado == 'descuento'){
+                total = total + parseInt(producto.cantidad * producto.price.slice(1)) * 0.8
+                mostrarinfo.textContent = `Total con descuento incluido es:$${total}`
+            
+            }
         })
 
         
@@ -295,12 +325,14 @@ function vaciarCarrito(){
         vaciarCarritoBtn.classList.add('hidden')
         btnComprar.classList.add('hidden')
         tablaCarrito.classList.add('hidden')
+        hr.classList.add('hidden')
     }else{
         infoCarritoVacio.classList.add('hidden')
         cartTotal.classList.remove('hidden')
         vaciarCarritoBtn.classList.remove('hidden')
         btnComprar.classList.remove('hidden')
         tablaCarrito.classList.remove('hidden')
+        hr.classList.remove('hidden')
     }
     cargarNuevoAncho()
 }

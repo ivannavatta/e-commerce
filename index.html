@@ -44,6 +44,9 @@
                   <i id="cart-btn" class='bx bx-shopping-bag logo-carrito'></i>
 
                     <div id="carrito">
+                      <h2 class="titulo-carrito">Mi compra</h2>
+                        <span id="cerrar-carrito"><i class='bx bx-x cerrar-btn'></i></span>
+                        <hr>
                         <!--completar el dibujo del carrito -->
                         <table id="lista-carrito" class="u-full-width">
                             <thead>
@@ -58,6 +61,12 @@
                             <tbody></tbody>
 
                         </table>
+                        <p  id="vaciar-carrito" class="boton u-full-width">Vaciar Carrito</p>
+                        <hr class="hr-vaciarCarrito">
+                        <h3>Obten un descuento colocando la palabra 'DESCUENTO'</h3>
+                            <input type="text" id="inputTexto" placeholder="Escribe codigo de descuento">
+                            <input type="submit" value="enviar" id="enviarDatos">
+                            <div class="mostrarInfo"></div>
                         <div class="cart-total ">
                           <h3>Total:</h3>
                         <span class="total-pagar">$</span>
@@ -65,7 +74,7 @@
                       
                       
                       
-                        <p  id="vaciar-carrito" class="boton u-full-width">Vaciar Carrito</p>
+                        
                     
                     <div class="center-botton">
                       <button class="bubbly-button">Comprar</button>
