@@ -28,6 +28,15 @@ const countProducts = document.querySelector('#contador-productos')
 
 const btnComprar = document.querySelector('.bubbly-button')
 
+const infoCarritoVacio = document.querySelector('.info-carrito-vacio')
+
+const cartTotal = document.querySelector('.cart-total');
+
+const tablaCarrito = document.querySelector('.header-carrito')
+
+const btnCarrito = document.querySelector('#cart-btn')
+
+const overlay = document.querySelector('#overlay');
 
 
 
@@ -45,7 +54,33 @@ document.addEventListener('DOMContentLoaded', ()=>{
     carritoHTML()
 })
 
-//eventos 
+//evento para abrir el carrito y se ejecuten diferentes funciones
+let isCartVisible = false;
+
+btnCarrito.addEventListener('click', () => {
+  if (!isCartVisible) {
+
+    carrito.style.display = 'block';
+    overlay.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    if(articulosCarrito.length){
+        overlay.style.width = '69.5%'
+    }
+    
+    
+  } else {
+
+    carrito.style.display = 'none';
+    overlay.style.display = 'none';
+    document.body.style.overflow = 'auto';
+    
+    
+  }
+ 
+  isCartVisible = !isCartVisible;
+});
+
+//eventos
 listaProductos.addEventListener('click', agregarProducto) 
 vaciarCarritoBtn.addEventListener('click', vaciarCarrito)
 carrito.addEventListener('click', eliminarProducto)
@@ -73,19 +108,14 @@ btnComprar.addEventListener('click', ()=>{
             
           })
 
-    }
-    else{
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'El carrito se encuentra vacio!',
-            
-          })
-    }
-    
-      
+    }  
 })
-
+// ajuste de overlay cuando se eliminan los productos y el carrito queda vacio
+function cargarNuevoAncho() {
+    if (!articulosCarrito.length && isCartVisible) {
+      overlay.style.width = '81.2%';
+    }
+  }
 // eliminar producto
 function eliminarProducto(e){
     e.preventDefault();
@@ -108,6 +138,7 @@ function agregarProducto(e){
         leerDatosProducto(producto)
 
     }
+    
 }
 
 //seleccionar los datos del producto que qeuremos que se muestre en el carrito
@@ -148,6 +179,33 @@ function leerDatosProducto(i){
 // mostrar los datos del producto
 function carritoHTML(){
 
+    const tbodyCarrito = document.querySelector("#lista-carrito tbody");
+    if (tbodyCarrito) {
+      if (tbodyCarrito.clientHeight < tbodyCarrito.scrollHeight) {
+        tbodyCarrito.style.overflowY = "auto";
+      } else {
+        tbodyCarrito.style.overflowY = "hidden";
+      }
+    }
+    
+
+if(!articulosCarrito.length){
+    infoCarritoVacio.classList.remove('hidden')
+    cartTotal.classList.add('hidden')
+    vaciarCarritoBtn.classList.add('hidden')
+    btnComprar.classList.add('hidden')
+    tablaCarrito.classList.add('hidden')
+}else{
+    infoCarritoVacio.classList.add('hidden')
+    cartTotal.classList.remove('hidden')
+    vaciarCarritoBtn.classList.remove('hidden')
+    btnComprar.classList.remove('hidden')
+    tablaCarrito.classList.remove('hidden')
+}
+
+
+
+
  
     let total = 0;
 	let totalOfProducts = 0;
@@ -170,6 +228,7 @@ function carritoHTML(){
           <td> 
           <a href="#" class="borrarProducto" data-id="${producto.id}"> ❌ </a>
           </td>
+          
         `;
         contenedorCarrito.appendChild(fila)
 
@@ -199,8 +258,8 @@ function carritoHTML(){
 
     valorTotal.innerText = `$${total}`;
     countProducts.innerText = totalOfProducts;
-    
-
+    cargarNuevoAncho()
+   
 }
 //limpiar el carrito asi no se repite el  producto agregado anteriormente cuando queremos agregar otro producto
 function limpiarCarrito(){
@@ -219,7 +278,21 @@ function vaciarCarrito(){
         contenedorCarrito.removeChild(contenedorCarrito.firstChild);
     }
     articulosCarrito = [];
-    valorTotal.innerText = 0;
+    valorTotal.innerText = "$0";
     countProducts.innerText = 0;
     sincronizarStorage();
+    if(!articulosCarrito.length){
+        infoCarritoVacio.classList.remove('hidden')
+        cartTotal.classList.add('hidden')
+        vaciarCarritoBtn.classList.add('hidden')
+        btnComprar.classList.add('hidden')
+        tablaCarrito.classList.add('hidden')
+    }else{
+        infoCarritoVacio.classList.add('hidden')
+        cartTotal.classList.remove('hidden')
+        vaciarCarritoBtn.classList.remove('hidden')
+        btnComprar.classList.remove('hidden')
+        tablaCarrito.classList.remove('hidden')
+    }
+    cargarNuevoAncho()
 }

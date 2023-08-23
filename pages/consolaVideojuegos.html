@@ -42,12 +42,13 @@
               <ul>
                   <li class="submenu">
                     <i id="cart-btn" class='bx bx-shopping-bag logo-carrito'></i>
+                    
   
                       <div id="carrito">
                           <!--completar el dibujo del carrito -->
                           <table id="lista-carrito" class="u-full-width">
                               <thead>
-                                  <tr>
+                                  <tr class="header-carrito">
                                       <th>Imagen</th>
                                       <th>Nombre</th>
                                       <th>Precio</th>
@@ -58,18 +59,29 @@
                               <tbody></tbody>
   
                           </table>
-                          <div class="cart-total">
-                          <h3>Total:</h3>
-                        <span class="total-pagar">$</span>
-                      </div>
+                          <div class="no-mover">
+
+                            <div class="cart-total">
+                              <h3>Total:</h3>
+                            <span class="total-pagar">$</span>
+                          </div>
+                          
+                          
+                              <p  id="vaciar-carrito" class="boton u-full-width">Vaciar Carrito</p>
+                          
+                          <div class="center-botton">
+                            <button class="bubbly-button">Comprar</button>
+                          </div>
+                          
+                          </div>
+                          <div class="info-carrito-vacio">
+                            <i id="cart-btn" class='bx bx-shopping-bag logo-carrito'></i>
+                          <h2 >Tu carrito esta vacio</h2>
+                          </div>
+                          
                       
-                      
-                          <p  id="vaciar-carrito" class="boton u-full-width">Vaciar Carrito</p>
-                      
-                      <div class="center-botton">
-                        <button class="bubbly-button">Comprar</button>
-                      </div>
                         </div>
+                        
                   </li>
               </ul>
               <div class="count-products">
@@ -84,66 +96,15 @@
         <h1 >Gaming</h1>
         <div class="center-contain">
         <div class="papa">
-            <article class="articulos">
-            <img  class="productos" src="../img/ps5.webp" alt="play 5">
-            <p>Playstation 5</p>
-            <p class="precio">$500</p>
-            <button class="agregarCarrito" data-id="1">Comprar</button>
-            </article>            
-          <article class="articulos">
-              <img  class="productos" src="../img/192879-500-auto.webp" alt="fifa 23">
-              <p>Videojuego Returnal PS5</p>
-              <p class="precio">$40</p>
-              <button class="agregarCarrito" data-id="2">Comprar</button>
-          </article>
-            <article class="articulos">
-              <img  class="productos" src="../img/auriculares ps5.png" alt="Aurculares">
-              <p >Auriculares PS5</p>
-              <p class="precio">$200</p>
-              <button class="agregarCarrito" data-id="3">Comprar</button>
-            </article>
-          <article class="articulos">
-            <img  class="productos" src="../img/199231-500-auto.webp" alt="Uncharted">
-            <p>Videojuego Nioh Collection PS5</p>
-            <p class="precio">$20</p>
-            <button class="agregarCarrito" data-id="4">Comprar</button>
-          </article>
-          <article class="articulos">
-            <img  class="productos" src="../img/192567-500-auto.webp" alt="Sackboy">
-            <p>Videojuego Sackboy PS4</p>
-            <p class="precio">$25</p>
-            <button class="agregarCarrito" data-id="5">Comprar</button>
-          </article>
-          <article class="articulos">
-            <img  class="productos" src="../img/play 4.webp" alt="Play4">
-            <p>Playstation 4 Edition: God Of War</p>
-            <p class="precio">$70</p>
-            <button class="agregarCarrito" data-id="6">Comprar</button>
-          </article>
-          <article class="articulos">
-            <img  class="productos" src="../img/watch dogs.webp" alt="Watch dogs">
-            <p>Videojuego Watch Dogs PS4</p>
-            <p class="precio">$60</p>
-            <button class="agregarCarrito" data-id="7">Comprar</button>
-          </article>
-          <article class="articulos">
-            <img  class="productos" src="../img/inmortals fenyx.webp" alt="Inmortals fenyx">
-            <p>Videojuego Inmortals Fenyx PS4</p>
-            <p class="precio">$10</p>
-            <button class="agregarCarrito" data-id="8">Comprar</button>
-          </article>
-          <article class="articulos">
-            <img  class="productos" src="../img/anthem.webp" alt="Anthem">
-            <p>Videojuego Anthem XBOX ONE</p>
-            <p class="precio">$25</p>
-            <button class="agregarCarrito" data-id="9">Comprar</button>
-          </article>
-          
+            
           </div>
         </div>
+        <div id="overlay"></div>
       </main>
 
       <script src="../js/app.js"></script>
+      <script src="../js/productos.js"></script>
+      <script src="../js/productosVideoJuegos.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
