@@ -1,0 +1,80 @@
+ [
+    {
+    "categoria": "videojuegos",
+    "id": 1,
+    "productName": "Play station 5",
+    "price": "$500",
+    "img": "../img/ps5.webp"
+    
+},
+{
+    "categoria": "videojuegos",
+    "id": 2,
+    "productName": "Videojuego Returnal PS5",
+    "price": "$40",
+    "img": "../img/192879-500-auto.webp"
+    
+},
+{
+    "categoria": "videojuegos",
+    "id": 3,
+    "productName": "Auriculares PS5",
+    "price": "$200",
+    "img": "../img/auriculares ps5.png"
+    
+},
+{
+    "categoria": "videojuegos",
+    "id": 4,
+    "productName": "Videojuego Nioh Collection PS5",
+    "price": "$20",
+    "img": "../img/199231-500-auto.webp"
+    
+},
+{
+    "categoria": "videojuegos",
+    "id": 5,
+    "productName": "Videojuego Sackboy PS4",
+    "price": "$25",
+    "img": "../img/192567-500-auto.webp"
+    
+},
+{
+    "categoria": "videojuegos",
+    "id": 6,
+    "productName": "Playstation 4 Edition: God Of War",
+    "price": "$270",
+    "img": "../img/play 4.webp"
+    
+},
+{
+    "categoria": "videojuegos",
+    "id": 7,
+    "productName": "Videojuego Watch Dogs PS4",
+    "price": "$60",
+    "img": "../img/watch dogs.webp"
+    
+},
+{
+    "categoria": "videojuegos",
+    "id": 8,
+    "productName": "Videojuego Inmortals Fenyx PS4",
+    "price": "$10",
+    "img": "../img/inmortals fenyx.webp"
+    
+},
+{
+    "categoria": "videojuegos",
+    "id": 9,
+    "productName": "Videojuego Anthem XBOX ONE",
+    "price": "$25",
+    "img": "../img/anthem.webp"
+    
+}
+ ]
+
+
+   
+
+
+   

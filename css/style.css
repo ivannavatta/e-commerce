@@ -145,6 +145,7 @@ figure{
 
 .productos{
     padding-top: 5rem;
+    width: 100%;
     height: 25rem;
 }
 
@@ -214,7 +215,7 @@ ul {
 }
 #lista-carrito{
     display: block;
-    max-height: 500px; 
+    max-height: 480px; 
   overflow-y: auto;
 }
 .no-mover{
@@ -245,8 +246,9 @@ td{
     padding-top: 10px;
     padding-bottom: 10px;
     position: relative;
-    top: 3.2rem;
+    top: 4rem;
 }
+
 .cantidad-pro-carrito button{
     background: transparent;
     color: #6a6a6a;
@@ -390,7 +392,29 @@ td{
     justify-content: center;
     align-content: center;
     padding-bottom: 22px;
-    padding-top: 3rem;
+    padding-top: 1.5rem;
+}
+.mostrarInfo{
+    text-align: center;
+    color: #1E8449;
+    padding-bottom: 1rem;
+    
+}
+.botonDesceuento{
+    border-radius: 3rem;
+    width: 7rem;
+    height: 3rem;
+    border: #6a6a6a 1px solid;
+}
+.descuentoText{
+    margin-left: 1rem;
+}
+.inputText{
+    border-radius: 0.5rem;
+    height: 2.5rem;
+    width: 15rem;
+    border: #6a6a6a 1px solid;
+    margin-left: 1rem;
 }
 
 .cart-total span{
@@ -436,6 +460,28 @@ td{
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6); /* Adjust opacity as needed */
     z-index: 1000; /* Ensure it's above other elements */
+  }
+
+  .text-filtro{
+     border-radius: 2rem;
+     width: 15rem;
+     height: 3rem;
+     border: #6a6a6a 1px solid;
+     color: #4e4b4b;
+     padding: 10px;
+     
+  }
+
+  .btn-filtro{
+    display: inline-block;
+    color: #4e4b4b;
+    cursor: pointer;
+    
+  }
+
+  .btn-filtro i{
+    font-size: 2rem;
+    margin-right: 2rem;
   }
 
   

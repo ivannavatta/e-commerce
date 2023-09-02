@@ -1,0 +1,49 @@
+[ {
+    "id": 15,
+    "productName": "Smartphone Samsung Galaxy Z Flip5",
+    "price": "$650",
+    "img": "../img/zflip 5 samsung.webp"
+    
+},
+{
+    "id": 16,
+    "productName": "Smartphone Samsung Galaxy Z Fold5",
+    "price": "$870",
+    "img": "../img/z fold 5 samsung.webp"
+    
+},
+{
+    "id": 17,
+    "productName": "iPhone 13 Pink",
+    "price": "$900",
+    "img": "../img/iphone 13.webp"
+    
+},
+{
+    "id": 18,
+    "productName": "iPhone 14 Pro Max Negro Espacial",
+    "price": "$1100",
+    "img": "../img/iphone 14 pro max.jpg"
+    
+},
+{
+    "id": 19,
+    "productName": "iPhone SE Medianoche",
+    "price": "$600",
+    "img": "../img/iphone se 20022.jpg"
+    
+},
+{
+    "id": 20,
+    "productName": "Celular Samsung Galaxy S23 Ultra Green",
+    "price": "$1050",
+    "img": "../img/samsung s23 ultra.webp"
+    
+},
+{
+    "id": 21,
+    "productName": "Samsung Galaxy S23 Plus Cream",
+    "price": "$900",
+    "img": "../img/samsung s23 plus.webp"
+    
+}]

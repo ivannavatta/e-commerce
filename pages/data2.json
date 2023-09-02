@@ -1,0 +1,41 @@
+[ {
+    "categoria": "televisores",
+    "id": 10,
+    "productName": "TV Samsung Neo 8K QLED QN800B 85",
+    "price": "$1100",
+    "img": "../img/SmartTv_Samsung_SMQN85QN800BG_01.webp"
+    
+},
+{
+    "categoria": "televisores",
+    "id": 11,
+    "productName": "Televisor Gaming Samsung 50 Neo Qled 4k",
+    "price": "$400",
+    "img": "../img/image-2d6061dd64964781bdc6b4697fc14b95.jpg"
+    
+},
+{
+    "categoria": "televisores",
+    "id": 12,
+    "productName": "Smart TV Samsung 75 Crystal UHD",
+    "price": "$350",
+    "img": "../img/Smart_TV_Samsung_SMUN75BU8000G_01.webp"
+    
+},
+{
+    "categoria": "televisores",
+    "id": 13,
+    "productName": "Smart Tv Samsung 55 The Frame Qled 4k",
+    "price": "$225",
+    "img": "../img/tv samsung.webp"
+    
+},
+{
+    "categoria": "televisores",
+    "id": 14,
+    "productName": "Smart TV Samsung 65 Neo QLED 4K",
+    "price": "$1220",
+    "img": "../img/image-f237b85625b44c7faa0c1274ca5eeddd.jpg"
+    
+}
+   ]

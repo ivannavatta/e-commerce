@@ -1,6 +1,4 @@
 
-
-
 //carrito vacio para agrear las cosas luego
 let articulosCarrito = []
 
@@ -48,6 +46,7 @@ const mostrarinfo = document.querySelector('.mostrarInfo')
 
 const enviarBtn = document.querySelector('#enviarDatos')
 
+const textoDescuento = document.querySelector('.descuentoText')
 
 
 cerrarBtn.addEventListener('click', () =>{
@@ -73,6 +72,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 //evento para abrir el carrito y se ejecuten diferentes funciones
 let isCartVisible = false;
 
+
 btnCarrito.addEventListener('click', () => {
   if (!isCartVisible) {
     
@@ -80,8 +80,10 @@ btnCarrito.addEventListener('click', () => {
     overlay.style.display = 'block';
     document.body.style.overflow = 'hidden';
     if(articulosCarrito.length){
-        overlay.style.width = '69.5%'
+        overlay.style.width = '68.5%'
     }
+
+    
    
    
     
@@ -91,7 +93,7 @@ btnCarrito.addEventListener('click', () => {
     carrito.style.display = 'none';
     overlay.style.display = 'none';
     document.body.style.overflow = 'auto';
-    
+    descuentoAplicado = false;
     
   }
  
@@ -107,6 +109,7 @@ overlay.addEventListener('click', () => {
   });
 
 //eventos
+enviarBtn.addEventListener('click', calcularTotalYDescuento)
 listaProductos.addEventListener('click', agregarProducto) 
 vaciarCarritoBtn.addEventListener('click', vaciarCarrito)
 carrito.addEventListener('click', eliminarProducto)
@@ -148,10 +151,11 @@ function eliminarProducto(e){
     //console.log(e.target.parentElement)
     if(e.target.classList.contains('borrarProducto')){
         const producto = e.target.parentElement.parentElement
-        const productoID = producto.querySelector('a').getAttribute('data-id');
+        const { dataset: { id: productoID } } = producto.querySelector('a');
         articulosCarrito = articulosCarrito.filter(producto => producto.id != productoID);
 
         carritoHTML()
+        calcularTotalYDescuento()
     }
 }
 
@@ -162,6 +166,7 @@ function agregarProducto(e){
         const producto = e.target.parentElement
         //console.log(producto)
         leerDatosProducto(producto)
+        calcularTotalYDescuento()
 
     }
     
@@ -169,13 +174,15 @@ function agregarProducto(e){
 
 //seleccionar los datos del producto que qeuremos que se muestre en el carrito
 function leerDatosProducto(i){
-    const infoProducto = {
-        img: i.querySelector('img').src,
-        title: i.querySelector('p').textContent,
-        price: i.querySelector('.precio').textContent,
-        id: i.querySelector('button').getAttribute('data-id'),
-        cantidad: 1
-    }
+    
+       const img = i.querySelector('img').src;
+       const title = i.querySelector('p').textContent;
+       const price = i.querySelector('.precio').textContent;
+       const id = i.querySelector('button').getAttribute('data-id');
+       const cantidad = 1;
+
+       const infoProducto = {img, title, price, id, cantidad}
+    
     //console.log(infoProducto)
     if(articulosCarrito.some(item => item.id === infoProducto.id)){
        const productos = articulosCarrito.map(producto =>{
@@ -205,13 +212,13 @@ function leerDatosProducto(i){
 // mostrar los datos del producto
 function carritoHTML(){
 
-    const tbodyCarrito = document.querySelector("#lista-carrito tbody");
-    if (tbodyCarrito) {
-      if (tbodyCarrito.clientHeight < tbodyCarrito.scrollHeight) {
-        tbodyCarrito.style.overflowY = "auto";
+    
+    if (contenedorCarrito) {
+      if (contenedorCarrito.clientHeight < contenedorCarrito.scrollHeight) {
+        contenedorCarrito.style.overflowY = "auto";
         
       } else {
-        tbodyCarrito.style.overflowY = "hidden";
+        contenedorCarrito.style.overflowY = "hidden";
       }
     }
     
@@ -223,6 +230,10 @@ if(!articulosCarrito.length){
     btnComprar.classList.add('hidden')
     tablaCarrito.classList.add('hidden')
     hr.classList.add('hidden')
+    inputText.classList.add('hidden')
+    enviarBtn.classList.add('hidden')
+    mostrarinfo.classList.add('hidden')
+    textoDescuento.classList.add('hidden')
 }else{
     infoCarritoVacio.classList.add('hidden')
     cartTotal.classList.remove('hidden')
@@ -230,6 +241,10 @@ if(!articulosCarrito.length){
     btnComprar.classList.remove('hidden')
     tablaCarrito.classList.remove('hidden')
     hr.classList.remove('hidden')
+    inputText.classList.remove('hidden')
+    enviarBtn.classList.remove('hidden')
+    mostrarinfo.classList.remove('hidden')
+    textoDescuento.classList.remove('hidden')
 }
 
 
@@ -242,7 +257,7 @@ if(!articulosCarrito.length){
     articulosCarrito.forEach(producto =>{
         const fila = document.createElement('tr')
         fila.innerHTML = `
-          <td class='img-pro-carrito'> <img src= "${producto.img}"  width="125"/> </td>
+          <td class='img-pro-carrito'> <img src= "${producto.img}"  width="142"/> </td>
           <td>   ${producto.title}   </td>
           <td class='price-pro-carrito'>  $${parseInt(producto.cantidad * producto.price.slice(1))}   </td>
          
@@ -278,15 +293,7 @@ if(!articulosCarrito.length){
 
             
         })
-        enviarBtn.addEventListener('click', () =>{
-            const textoIngresado = inputText.value;
-            let total = 0
-            if(textoIngresado == 'descuento'){
-                total = total + parseInt(producto.cantidad * producto.price.slice(1)) * 0.8
-                mostrarinfo.textContent = `Total con descuento incluido es:$${total}`
-            
-            }
-        })
+        
 
         
         total = total + parseInt(producto.cantidad * producto.price.slice(1))
@@ -297,7 +304,24 @@ if(!articulosCarrito.length){
     valorTotal.innerText = `$${total}`;
     countProducts.innerText = totalOfProducts;
     cargarNuevoAncho()
+    calcularTotalYDescuento()
    
+}
+function calcularTotalYDescuento() {
+    
+
+    let total = articulosCarrito.reduce((sum, producto) => sum + producto.cantidad * parseFloat(producto.price.slice(1)), 0);
+        
+        if (inputText.value === 'descuento') {
+            total *= 0.8;
+            mostrarinfo.textContent = `Total 20% OFF: $${total.toFixed(2)}`;
+        }
+        else{
+            mostrarinfo.textContent = ''
+        }
+
+     
+    
 }
 //limpiar el carrito asi no se repite el  producto agregado anteriormente cuando queremos agregar otro producto
 function limpiarCarrito(){
@@ -326,6 +350,10 @@ function vaciarCarrito(){
         btnComprar.classList.add('hidden')
         tablaCarrito.classList.add('hidden')
         hr.classList.add('hidden')
+        inputText.classList.add('hidden')
+    enviarBtn.classList.add('hidden')
+    mostrarinfo.classList.add('hidden')
+    textoDescuento.classList.add('hidden')
     }else{
         infoCarritoVacio.classList.add('hidden')
         cartTotal.classList.remove('hidden')
@@ -333,6 +361,14 @@ function vaciarCarrito(){
         btnComprar.classList.remove('hidden')
         tablaCarrito.classList.remove('hidden')
         hr.classList.remove('hidden')
+        inputText.classList.remove('hidden')
+        enviarBtn.classList.remove('hidden')
+        mostrarinfo.classList.remove('hidden')
+        textoDescuento.classList.remove('hidden')
     }
     cargarNuevoAncho()
+    
+    inputText.textContent = ''
+
+    
 }
