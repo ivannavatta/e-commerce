@@ -5,7 +5,7 @@ let articulosCarrito = []
 
 
 //selccionar el contenedor padre dond ese encuentran los productos
-const listaProductos = document.querySelector(".papa")
+const listaProductos = document.querySelector(".container-productos")
 //console.log(listaProductos)
 
 // selecionar el carrito

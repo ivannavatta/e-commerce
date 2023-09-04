@@ -118,7 +118,7 @@ figure{
     max-width: 220px;
     margin: auto;
 }
-.papa{
+.container-productos{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     max-width: 1100px;

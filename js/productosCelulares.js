@@ -1,5 +1,5 @@
 
-const contenidoCelulares = document.querySelector('.papa');
+const contenidoCelulares = document.querySelector('.container-productos');
 
 let productosCelulares = []; // Define y asigna los productos de celulares
 
@@ -22,22 +22,18 @@ const getProducts = async () => {
     });
     
     // Llama a mostrarProductosSegunFiltro después de obtener los productos
-    mostrarProductosSegunFiltro('', 'celulares'); // Puedes usar un filtro inicial vacío si lo deseas
+    mostrarProductosSegunFiltro('', 'celulares'); 
 };
 
 function mostrarProductosSegunFiltro(filtro, categoria) {
-    const contenido = document.querySelector('.papa');
+    const contenido = document.querySelector('.container-productos');
     contenido.innerHTML = '';
 
     let productos;
 
-    if (categoria === 'videojuegos') {
-        productos = productosVideoJuegos;
-    } else if (categoria === 'celulares') {
+    if (categoria === 'celulares') {
         productos = productosCelulares;
-    } else if (categoria === 'televisores') {
-        productos = productosTelevisores;
-    }
+    } 
 
     productos.forEach(product => {
         if (product.productName.toLowerCase().includes(filtro.toLowerCase())) {

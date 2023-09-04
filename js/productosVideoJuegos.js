@@ -1,5 +1,5 @@
 
-const contenidoVideojuegos = document.querySelector('.papa');
+const contenidoVideojuegos = document.querySelector('.container-productos');
 
 let productosVideojuegos = []; // Define y asigna los productos de videojuegos
 
@@ -22,11 +22,11 @@ const getProducts = async () => {
     });
     
     // Llama a mostrarProductosSegunFiltro después de obtener los productos
-    mostrarProductosSegunFiltro('', 'videojuegos'); // Puedes usar un filtro inicial vacío si lo deseas
+    mostrarProductosSegunFiltro('', 'videojuegos'); 
 };
 
 function mostrarProductosSegunFiltro(filtro, categoria) {
-    const contenido = document.querySelector('.papa');
+    const contenido = document.querySelector('.container-productos');
     contenido.innerHTML = '';
 
     let productos;

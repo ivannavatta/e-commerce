@@ -1,4 +1,4 @@
-const contenidoTelevisores = document.querySelector('.papa');
+const contenidoTelevisores = document.querySelector('.container-productos');
 
 
 let productosTelevisores = []; // Define y asigna los productos de televisores
@@ -24,11 +24,11 @@ const getProducts = async () => {
     });
     
     // Llama a mostrarProductosSegunFiltro después de obtener los productos
-    mostrarProductosSegunFiltro('', 'televisores'); // Puedes usar un filtro inicial vacío si lo deseas
+    mostrarProductosSegunFiltro('', 'televisores'); 
 };
 
 function mostrarProductosSegunFiltro(filtro, categoria) {
-    const contenido = document.querySelector('.papa');
+    const contenido = document.querySelector('.container-productos');
     contenido.innerHTML = '';
 
     let productos;
